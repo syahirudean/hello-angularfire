@@ -1,0 +1,2 @@
+# hello-angularfire
+Learning angularfire
