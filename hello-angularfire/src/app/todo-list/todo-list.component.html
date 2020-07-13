@@ -1,0 +1,16 @@
+<main *ngIf="todoList?.length > 0;else noTodos">
+    <ul *ngFor="let todo of todoList" class="collection">
+        <li class="collection-item">
+            <strong>{{todo.title}}:</strong>
+            <br>
+            {{todo.description}}
+        </li>
+
+    </ul>
+</main>
+
+<ng-template #noTodos>
+    <section>
+        <h3>Nothing to-do right now.</h3>
+    </section>
+</ng-template>
