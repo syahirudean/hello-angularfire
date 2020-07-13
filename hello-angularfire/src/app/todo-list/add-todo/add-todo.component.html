@@ -1,0 +1,22 @@
+<main>
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">📝 Add Todo</span>
+            <form class="col s6" [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col s6">
+                        <mat-form-field>
+                            <input matInput placeholder="What shall you do?" formControlName="title">
+                        </mat-form-field>
+                    </div>
+                    <div class="col s6">
+                        <mat-form-field>
+                            <textarea matInput placeholder="Describe your task..." formControlName="description"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <button mat-raised-button color="primary">➕ Add Todo</button>
+            </form>
+        </div>
+    </div>
+</main>
