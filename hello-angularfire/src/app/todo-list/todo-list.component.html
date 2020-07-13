@@ -1,6 +1,6 @@
 <main *ngIf="todoList?.length > 0;else noTodos">
     <ul *ngFor="let todo of todoList" class="collection">
-        <li class="collection-item">
+        <li class="collection-item" (dblclick)="deleteTodo($event, todo)">
             <strong>{{todo.title}}:</strong>
             <br>
             {{todo.description}}

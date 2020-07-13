@@ -18,4 +18,8 @@ export class TodoListComponent implements OnInit {
       this.todoList = todos;
     });
   }
+
+  deleteTodo(event, todo) {
+    this.todoListService.deleteTodo(todo);
+  }
 }
