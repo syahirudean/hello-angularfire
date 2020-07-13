@@ -34,12 +34,17 @@ export class TodoListService {
     return this.todos;
   }
 
-  addTodo(todo: Todo) {
+  addTodo(todo: Todo): void {
     this.todoList.add(todo);
   }
 
-  deleteTodo(todo: Todo) {
+  deleteTodo(todo: Todo): void {
     this.todoDoc = this.afs.doc(`todos/${todo.id}`);
     this.todoDoc.delete();
+  }
+
+  updateTodo(todo: Todo): void {
+    this.todoDoc = this.afs.doc(`todos/${todo.id}`);
+    this.todoDoc.update(todo);
   }
 }

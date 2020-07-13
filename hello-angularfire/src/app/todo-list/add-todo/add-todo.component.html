@@ -3,16 +3,12 @@
         <div class="card-content">
             <span class="card-title">📝 Add Todo</span>
             <form class="col s6" [formGroup]="todoForm" (ngSubmit)="onSubmit()">
-                <div class="row">
+                <div class="">
                     <div class="col s6">
-                        <mat-form-field>
-                            <input matInput placeholder="What shall you do?" formControlName="title">
-                        </mat-form-field>
+                            <input placeholder="What shall you do?" formControlName="title">
                     </div>
                     <div class="col s6">
-                        <mat-form-field>
-                            <textarea matInput placeholder="Describe your task..." formControlName="description"></textarea>
-                        </mat-form-field>
+                            <textarea placeholder="Describe your task..." formControlName="description" style="height:100px"></textarea>
                     </div>
                 </div>
                 <button mat-raised-button color="primary">➕ Add Todo</button>

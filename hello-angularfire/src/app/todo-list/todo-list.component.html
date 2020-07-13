@@ -1,9 +1,29 @@
 <main *ngIf="todoList?.length > 0;else noTodos">
     <ul *ngFor="let todo of todoList" class="collection">
-        <li class="collection-item" (dblclick)="deleteTodo($event, todo)">
+        <li class="collection-item">
             <strong>{{todo.title}}:</strong>
             <br>
             {{todo.description}}
+            <a class="secondary-content" (click)="editTodo($event, todo)" *ngIf="editState === false">✏️</a>
+
+            <div *ngIf="editState && edit.id == todo.id">
+                <hr>
+                <a class="secondary-content" (click)="close()">❌</a>
+                <form class="col s6" [formGroup]="editForm" (ngSubmit)="updateTodo(todo)">
+                    <div class="">
+                        <div class="col s6">
+                            <input [placeholder]="todo.title" formControlName="title">
+                        </div>
+                        <div class="col s6">
+                            <textarea [placeholder]="todo.description" formControlName="description"
+                                style="height:100px"></textarea>
+                        </div>
+                    </div>
+                    <button mat-raised-button color="primary">Update</button>
+                    <button mat-raised-button class="red" style="margin-left: 5px;"
+                        (click)="deleteTodo($event, todo)">Delete</button>
+                </form>
+            </div>
         </li>
 
     </ul>

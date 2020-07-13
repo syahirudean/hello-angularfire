@@ -31,7 +31,7 @@ export class AddTodoComponent implements OnInit {
       this.todoForm.value.description !== ''
     ) {
       this.todoListService.addTodo(this.todoForm.value);
-      this.todoForm.reset(this.todoForm.value);
+      this.todoForm.reset(this.todoForm);
     }
   }
 }
