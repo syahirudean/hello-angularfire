@@ -13,7 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AngularFireModule } from 'angularfire2';
 
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoListModule } from './todo-list/todo-list.module';

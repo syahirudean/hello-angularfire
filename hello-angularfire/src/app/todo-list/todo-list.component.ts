@@ -46,7 +46,7 @@ export class TodoListComponent implements OnInit {
     this.editState = false;
   }
 
-  updateTodo(todo: Todo) {
+  updateTodo(todo: Todo): void {
     this.todoListService.updateTodo(todo);
     this.close();
   }

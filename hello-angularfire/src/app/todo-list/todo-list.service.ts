@@ -18,7 +18,9 @@ export class TodoListService {
 
   constructor(public afs: AngularFirestore) {
     // this.todos = this.fs.collection('todos').valueChanges();
-    this.todoList = this.afs.collection('todos');
+    this.todoList = this.afs.collection('todos', (ref) => {
+      return ref.orderBy('title');
+    });
     this.todos = this.todoList.snapshotChanges().pipe(
       map((changes) => {
         return changes.map((a) => {

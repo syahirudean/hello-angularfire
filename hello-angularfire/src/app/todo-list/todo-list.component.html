@@ -9,19 +9,13 @@
             <div *ngIf="editState && edit.id == todo.id">
                 <hr>
                 <a class="secondary-content" (click)="close()">❌</a>
-                <form class="col s6" [formGroup]="editForm" (ngSubmit)="updateTodo(todo)">
-                    <div class="">
-                        <div class="col s6">
-                            <input [placeholder]="todo.title" formControlName="title">
-                        </div>
-                        <div class="col s6">
-                            <textarea [placeholder]="todo.description" formControlName="description"
-                                style="height:100px"></textarea>
-                        </div>
-                    </div>
-                    <button mat-raised-button color="primary">Update</button>
+                <form (ngSubmit)="updateTodo(todo)">
+                    <input type="text" name="title" placeholder="update title" [(ngModel)]="todo.title">
+                    <textarea class="materialize-textarea" type="text" name="description" placeholder="update description"
+                        [(ngModel)]="todo.description"></textarea>
+                    <button mat-raised-button class="green">✔️ Update</button>
                     <button mat-raised-button class="red" style="margin-left: 5px;"
-                        (click)="deleteTodo($event, todo)">Delete</button>
+                        (click)="deleteTodo($event, todo)">🗑️ Delete</button>
                 </form>
             </div>
         </li>
